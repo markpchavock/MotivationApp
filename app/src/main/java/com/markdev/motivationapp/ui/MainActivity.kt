@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             insets
         }
 
-        //Declarações dos componentes clicáveis
+
 
         binding.buttonNewPhrase.setOnClickListener(this)
         binding.imageAll.setOnClickListener(this)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         binding.imageSunny.setOnClickListener(this)
 
         handleUserName()
-        // "Finge" o clique do primeiro item na tela inicial para cair na primeira condição de if e pintar o primeiro item.
+
         handleFilter(R.id.image_all)
         handleNextPhrase()
 
@@ -60,17 +60,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
     }
 
     private fun handleNextPhrase(){
-        binding.textMessageCenter.text = Mock().getPhrase(categoryId) // Conectamos o botão de nova frase com o  get das frases.
+        binding.textMessageCenter.text = Mock().getPhrase(categoryId)
     }
-    //Tratamento do icone que foi clicado
+
     private fun handleFilter(id: Int){
 
-        //Pinta  todos os itens da cor padrão, como se estivesse apagado.
+
         binding.imageAll.setColorFilter(ContextCompat.getColor(this,R.color.dark_purple))
         binding.imageHappy.setColorFilter(ContextCompat.getColor(this,R.color.dark_purple))
         binding.imageSunny.setColorFilter(ContextCompat.getColor(this,R.color.dark_purple))
 
-        // O icone que foi clicado ficará em destaque
+
         when (id) {
             R.id.image_all -> {
                 binding.imageAll.setColorFilter(ContextCompat.getColor(this,R.color.white))

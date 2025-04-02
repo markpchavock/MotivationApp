@@ -28,7 +28,7 @@ class Mock {
     )
 
     fun getPhrase(value: Int): String{
-        val filtered = mListPhrase.filter { it.categoryId == value || value == all } // Recebe a lista de frases onde o Id for igual ao passado. // Se o valor for = 1(all) a lista não será filtrada e retornará a lista inteira.
-        return filtered[Random.nextInt(filtered.size)].description // Retorna a descrição da frase aleatória baseada no ID.
+        val filtered = mListPhrase.filter { it.categoryId == value || value == all }
+        return filtered[Random.nextInt(filtered.size)].description
     }
 }
